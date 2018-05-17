@@ -51,7 +51,7 @@ Criar o gerenciamento de categorias do Sistema, onde seja possível Listar, Cria
     - Valor padrão para o filtro de **Nome**: Vazio.
     - Valor padrão para o filtro de **Categoria**: Todos.
 - Uma listagem com todos os produtos cadastrados no sistema, ordenados por **Categoria**, **Nome** e **Preço**. Os campos que serão apresentados na listagem são: id, nome, quantidade, preço e Ação.
-    - A coluna com o nome do produto deve ser um link que direciona o usuário aos detalhes do produto (*Pode ser um MOdal*).
+    - A coluna com o nome do produto deve ser um link que direciona o usuário aos detalhes do produto (*Pode ser um Modal*).
     - A coluna Ação deve possuir dois botões, **Editar**, **Excluir**, **Reduzir Estoque**, **Aumentar Estoque**.
         - Botão Editar - Deve direcionar o usuário a uma tela onde o Nome, Descrição, Preço e Quantidade do produto possam ser Alterados.
         - Botão Excluir - Exclui o Produto do Sistema.
