@@ -73,7 +73,3 @@ Criar o gerenciamento de categorias do Sistema, onde seja possível Listar, Cria
 
 
 ### Boa Sorte!
-
-
-
-
