@@ -44,10 +44,9 @@ Criar o gerenciamento de categorias do Sistema, onde seja possível Listar, Cria
 - Últilizar php 5.6 ou superior
 - Últilizar Banco de Dados MySQL ou MariaDB
     - As tabelas devem ser criadas através de Migrations.
-- Não é permitido ultilizar Frameworkds PHP, com exceção do [Zend Framework 2](https://framework.zend.com/) ou [Zend Expressive 2](https://docs.zendframework.com/zend-expressive/).
 - Obrigatório o uso de **Orientação a Objeto**.
 - Últilizar as bibliotecas `pdo` para efetuar a comunicação com o Banco de Dados
-- Seguir os padrões das **PSRs** ([Saiba Mais](http://br.phptherightway.com/)).
+- Seguir os padrões das **PSRs** (Saiba mais [aqui](http://br.phptherightway.com/) e [aqui](https://www.php-fig.org/psr/)).
 - Criar um `README.md` com as instruções de como instalar a aplicação. (Pasta raiz, migrations, configuração do ambiente e banco de dados)
 
 
