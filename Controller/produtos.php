@@ -6,7 +6,7 @@
  * Time: 19:04
  */
 
-class produtos extends ModelProduto
+class Produtos extends ModelProduto
 {
 
     public function indexAction() {

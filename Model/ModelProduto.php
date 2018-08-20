@@ -4,7 +4,7 @@ class ModelProduto
 {
 
     public function __construct() {
-        $this->db = new DB;
+        $this->db = new DB();
     }
 
     public function getAll($c = '*') {
@@ -36,11 +36,6 @@ class ModelProduto
         return $dados;
     }
 
-    public function remover() {
-        $sql = "DELETE FROM produtos WHERE produto_id = $this->produto_id";
-        $this->db->query($sql);
-    }
-
     public function incluir(){
 
         $nome = $this->getProdutoNome();
@@ -66,5 +61,20 @@ class ModelProduto
         $inserir .= "WHERE produto_id = $id; ";
         $retorno = array();
         $this->db->query($inserir);
+    }
+
+    public function remover($id){
+        $sql = "DELETE FROM produtos WHERE produto_id = $id";
+        $this->db->query($sql);
+    }
+
+    public function max($somar,$id){
+        $sql = "UPDATE produtos SET produto_quantidade = $somar WHERE produto_id = $id;";
+        $this->db->query($sql);
+    }
+
+    public function min($menor, $id){
+        $sql = "UPDATE produtos SET produto_quantidade = $menor WHERE produto_id = $id;";
+        $this->db->query($sql);
     }
 }

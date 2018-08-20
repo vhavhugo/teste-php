@@ -101,39 +101,6 @@ Class Index extends ModelProduto {
         Tpl::view("editar", $dados);
     }
 
-    public function max()
-    {
-        $id = intval(Router::getUri(2));
-        $quantidade = intval(Router::getUri(3));
-        $soma = $quantidade + 1;
-        $inserir = "UPDATE produtos SET ";
-        $inserir .= "produto_quantidade = $soma ";
-        $inserir .= "WHERE produto_id = $id; ";
-        $retorno = array();
-        $this->db->query($inserir);
-        Router::redirect(Router::base() . "/index/?ok");
-    }
-
-    public function min()
-    {
-        $id = intval(Router::getUri(2));
-        $quantidade = intval(Router::getUri(3));
-        $menos = $quantidade - 1;
-        $inserir = "UPDATE produtos SET ";
-        $inserir .= "produto_quantidade = $menos ";
-        $inserir .= "WHERE produto_id = $id; ";
-        $retorno = array();
-        $this->db->query($inserir);
-        Router::redirect(Router::base() . "/index/?ok");
-    }
-
-    public function remover() {
-        $this->produto_id = intval(Router::getUri(2));
-        $sql = "DELETE FROM produtos WHERE produto_id = $this->produto_id";
-        $this->db->query($sql);
-        Router::redirect(Router::base() . "/index/?removido");
-    }
-
     public function incluir(){
         $this->setProdutoNome($_POST["produto_nome"]);
         $this->setProdutoDesc(addslashes($_POST["produto_desc"]));
@@ -152,6 +119,30 @@ Class Index extends ModelProduto {
         $this->setProdutoQuantidade(intval($_POST["produto_quantidade"]));
         $this->setProdutoDataDeCadastro($_POST["produto_data_cadastro"]);
         parent::atualizar();
+        Router::redirect(Router::base() . "/index/?ok");
+    }
+
+    public function remover() {
+        $produto_id = intval(Router::getUri(2));
+        parent::remover($produto_id);
+        Router::redirect(Router::base() . "/index/?removido");
+    }
+
+    public function max()
+    {
+        $produto_id = intval(Router::getUri(2));
+        $quantidade = intval(Router::getUri(3));
+        $soma = $quantidade + 1;
+        parent::max($soma,$produto_id);
+        Router::redirect(Router::base() . "/index/?ok");
+    }
+
+    public function min()
+    {
+        $produto_id = intval(Router::getUri(2));
+        $quantidade = intval(Router::getUri(3));
+        $menos = $quantidade - 1;
+        parent::min($menos, $produto_id);
         Router::redirect(Router::base() . "/index/?ok");
     }
 }
